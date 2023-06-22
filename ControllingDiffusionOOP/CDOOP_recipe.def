@@ -1,0 +1,9 @@
+
+# container for running the stable diffusion model
+Bootstrap: localimage
+From: ENV_image.sif
+
+# load the files into the container
+%files
+    # scripts
+    job_scripts

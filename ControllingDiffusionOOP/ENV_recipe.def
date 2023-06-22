@@ -1,0 +1,21 @@
+# container for running the stable diffusion model
+Bootstrap: docker
+From: continuumio/miniconda3:latest
+
+# install the dependencies
+%post
+    # install core packages
+    conda install -y pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+    # install diffusion packages
+    conda install -y -c conda-forge transformers
+    conda install -y -c anaconda diffusers-torch
+    # scipy is needed for LMSDiscreteScheduler i.e. The stable diffusion model
+    conda install -y -c anaconda scipy
+
+    # install base packages
+    conda install -y -c anaconda numpy
+    conda install -y -c conda-forge matplotlib
+
+    # install scikit-learn
+    conda install -y -c conda-forge scikit-learn
