@@ -1,2 +1,6 @@
 
+# Need on some systems
 .DS_Store
+
+# This file is not relevant for the project as the output is saved as a .png file
+call_graph
